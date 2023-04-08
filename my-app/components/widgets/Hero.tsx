@@ -13,8 +13,11 @@ const Hero = () => {
         <div className='flex-1'>
           <h4 className='text-teal-800 mt-4 font-semibold text-lg'>Presidential Initiative for Artificial Intelligence and Computing(PIAIC)</h4>
           <h1 className='text-4xl  sm:text-5xl font-bold text-gray-900 md:text-red-400 lg:text-blue-700'>Certified Web 3.0 and Metaverse Developer</h1>
-          <p className='mt-6 text-lg text-slate-600'> As you learn from panaverse you are getting ready for next generartion of internet
-            Consolidating Web 3.0 and Metaverse, Artificial Intelligence, Blockchain, Internet of Things
+          <p className='mt-6 text-xl text-slate-600'> In one and quarter year of panaverse learning you are getting ready for next generartion of internet
+            
+          </p>
+          <p className='mt-1 text-xl text-slate-600'>
+          Consolidating Web 3.0 and Metaverse, Artificial Intelligence, Blockchain, Internet of Things, Network Automaton and Bioinformatics
           </p>
           <div className='mt-5'>
             <Button text={"Enroll now"}/>
