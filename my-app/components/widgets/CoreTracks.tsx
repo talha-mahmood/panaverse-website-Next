@@ -17,17 +17,23 @@ const CoreTracks = () => {
         </div>
       </div>
       {/* Boxes */}
-      <div className='my-4'>
-        <div className='border rounded-md-w-4/12'>
+      <div className='my-20 flex gap-x-4'>
+        <div className='border rounded-md-w-4/12 relative px-8 py-8'>
           <h4 className='font-bold text-lg'>Quarter 1</h4>
           <p className='mt-2 '>Object oriented programming using typescript</p>
-          <span className='absolute '>1</span>
+          <span className='absolute top-0 right-10 text-gray-300 -z-10 text-9xl font-bold '>1</span>
          
         </div>
-        <div>
+        <div className='border rounded-md-w-4/12 relative px-8 py-8'>
+        <h4 className='font-bold text-lg'>Quarter 1</h4>
+        <p className='mt-2 '>Object oriented programming using typescript</p>
+        <span className='absolute top-0 right-10 text-gray-300 -z-10 text-9xl font-bold '>1</span>
 
         </div>
-        <div>
+        <div className='border rounded-md-w-4/12 relative px-8 py-8'>
+        <h4 className='font-bold text-lg'>Quarter 1</h4>
+        <p className='mt-2 '>Object oriented programming using typescript</p>
+        <span className='absolute top-0 right-10 text-gray-300 -z-10 text-9xl font-bold '>1</span>
 
         </div>
 
