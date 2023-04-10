@@ -1,11 +1,30 @@
 import React from 'react'
 import Wrapper from '../shared/Wrapper'
 import Button from '../shared/Button'
+import QuarterBox from '../shared/QuarterBox';
 
 const CoreTracks = () => {
   const courses=`Core Courses \n (Common in all specification):`;
+  const CoreTrackData=[
+    {
+      header:"Quarter I",
+      desc:"Object oriented programming using typescript",
+      number:1
+    },
+    {
+      header:"Quarter II",
+      desc:"Object oriented programming using typescript",
+      number:2
+    },
+    {
+      header:"Quarter III",
+      desc:"Object oriented programming using typescript",
+      number:3
+    }
+  ]
   return (
-    <section className='mt-16 large:28'>
+   
+    <section className='mt-16 lg:mt-28'>
     <Wrapper>
       <div className='max-w-screen-sm'>
         {/* content */}
@@ -17,31 +36,21 @@ const CoreTracks = () => {
         </div>
       </div>
       {/* Boxes */}
-      <div className='my-20 flex gap-x-4'>
-        <div className='border rounded-md-w-4/12 relative px-8 py-8'>
-          <h4 className='font-bold text-lg'>Quarter 1</h4>
-          <p className='mt-2 '>Object oriented programming using typescript</p>
-          <span className='absolute top-0 right-10 text-gray-300 -z-10 text-9xl font-bold '>1</span>
-         
-        </div>
-        <div className='border rounded-md-w-4/12 relative px-8 py-8'>
-        <h4 className='font-bold text-lg'>Quarter 1</h4>
-        <p className='mt-2 '>Object oriented programming using typescript</p>
-        <span className='absolute top-0 right-10 text-gray-300 -z-10 text-9xl font-bold '>1</span>
-
-        </div>
-        <div className='border rounded-md-w-4/12 relative px-8 py-8'>
-        <h4 className='font-bold text-lg'>Quarter 1</h4>
-        <p className='mt-2 '>Object oriented programming using typescript</p>
-        <span className='absolute top-0 right-10 text-gray-300 -z-10 text-9xl font-bold '>1</span>
-
-        </div>
-
+      <div className='my-20 flex flex-col md:flex-row gap-x-4 '>
+        {CoreTrackData.map((item,i)=>(
+          <QuarterBox 
+          key={item.number}
+          header={item.header} 
+          desc={item.desc}
+          number={i+1}/>
+        ))};
 
       </div>
+      {/* Specialized Tracks */}
     
       </Wrapper>
       </section>
+   
   )
 }
 
