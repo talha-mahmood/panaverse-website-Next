@@ -5,7 +5,9 @@ import Wrapper from "../shared/Wrapper"
 import QuarterBox from "../shared/QuarterBox"
 import i1 from '@/public/metaverse.webp'
 import i2 from '@/public/ai.webp'
-
+import i3 from '@/public/cloud.webp'
+import i4 from '@/public/genomics.webp'
+import i5 from "@/public/ambient.webp"
 import Image from 'next/image'
 export const programdata=[
     {
@@ -51,7 +53,7 @@ export const programdata=[
         slug:"cloud",
         header:"Cloud-Native Computing Specialization",
         desc:"The Cloud-Native Computing Specialization focuses on Containers, Kubernetes, and CDK for Kubernetes.",
-        my_img:i2,
+        my_img:i3,
         quarters:[
             {
                 header:"Quarter IV",
@@ -66,23 +68,44 @@ export const programdata=[
         ]
         },
     {
-    slug:"iot",
-    header:"Ambient Computing and IoT Specialization",
-    desc:"The Ambient Computing and IoT Specialization focuses on building Smart Homes, Offices, Factories, and Cities using Voice computing, Matter Protocol, and Embedded Devices.",
-    my_img:i1,
+    slug:"gbs",
+    header:"Genomics and Bioinformatics Specialization",
+    desc:"Genomics is the study of the total genetic makeup of individual organisms, and how this genetic information is structured, functions, and has evolved; bioinformatics encompasses a diverse range of analytical methods and tools applied to genomic data. This Specialization focuses on performing complex bioinformatics analysis using the most essential Python libraries and applications.",
+    my_img:i4,
     quarters:[
         {
             header:"Quarter IV",
-            desc:"AC-351: Ambient Computing with Voice Assistants and Matter Devices",
+            desc:"Bio-351: Python for Biologists",
             number:4
         },
         {
             header:"Quarter V",
-            desc:"AC-361: Embedded Programming using C and Rust",
+            desc:"Bio-361: Bioinformatics with Python",
             number:5
         }
     ]
-    }
+    },
+    {
+        slug:"npas",
+        header:"Network Programmability and Automation Specialization",
+        desc:"More than ever, network engineers are finding it challenging to complete their duties entirely manually. Network automation is now crucial due to new protocols, technologies, delivery models, and the requirement for enterprises to become more adaptable and agile. This course teaches network engineers how to automate systems with code using a variety of technologies and tools, including Linux, Python, APIs, and Git.",
+        my_img:i5,
+        quarters:[
+            {
+                header:"Quarter IV",
+                desc:"NPA-351: CCNA 200-301 Certification ",
+                number:4
+            },
+            {
+                header:"Quarter V",
+                desc:"NPA-361: Network Programmability and Automation",
+                number:5
+            }
+        ]
+        }
+    
+
+    
 
     
    
