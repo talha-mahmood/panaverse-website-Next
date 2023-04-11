@@ -28,8 +28,8 @@ const CoreTracks = () => {
     <Wrapper>
       <div className='max-w-screen-sm'>
         {/* content */}
-        <h4 className='text-teal-800 mt-4 font-semibold text-lg'>Program of Studies</h4>
-        <h2 className='text-4xl font-bold text-slate-600 whitespace-pre-line '>{courses}</h2>
+        <h4 className='text-teal-800 mt-4 font-bold text-lg'>Program of Studies</h4>
+        <h2 className='text-4xl font-bold  whitespace-pre-line '>{courses}</h2>
         <p className='mt-6 text-xl text-slate-600'>Every participant of program will start by completing the following </p>
         <div className='mt-5'>
         <Button text="Learn More"/>

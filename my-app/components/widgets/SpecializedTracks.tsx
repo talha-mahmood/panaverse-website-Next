@@ -1,14 +1,11 @@
 "use client"
+import { useState } from "react"
 import Button from "../shared/Button"
 import Wrapper from "../shared/Wrapper"
 import QuarterBox from "../shared/QuarterBox"
-import i1 from '@/public/i1.jpg'
-import i2 from '@/public/i2.jpg'
-import i3 from '@/public/i3.jpg'
-import i4 from '@/public/i4.jpg'
-import i5 from '@/public/i5.jpg'
-import i6 from '@/public/i6.jpg'
-import i7 from '@/public/i7.jpg'
+import i1 from '@/public/metaverse.webp'
+import i2 from '@/public/ai.webp'
+
 import Image from 'next/image'
 export const programdata=[
     {
@@ -33,7 +30,7 @@ export const programdata=[
     {
         slug:"ai",
         header:"Artificial Intelligence (AI) and Deep Learning Specialization",
-        desc:"Web 3 and Metaverse Specialization",
+        desc:"The AI and Deep Learning specialization focuses on building and deploying intelligent APIs using OpenAI models and building custom Deep Learning Tensorflow models.",
         my_img:i2,
         quarters:[
             {
@@ -47,37 +44,85 @@ export const programdata=[
                 number:5
             }
         ]
+        },
+    
+
+    {
+        slug:"cloud",
+        header:"Cloud-Native Computing Specialization",
+        desc:"The Cloud-Native Computing Specialization focuses on Containers, Kubernetes, and CDK for Kubernetes.",
+        my_img:i2,
+        quarters:[
+            {
+                header:"Quarter IV",
+                desc:"CN-351: Certified Kubernetes Application Developer (CKAD) ",
+                number:4
+            },
+            {
+                header:"Quarter V",
+                desc:"CN-361: Developing Multi-Cloud Apps using CDK for Terraform",
+                number:5
+            }
+        ]
+        },
+    {
+    slug:"iot",
+    header:"Ambient Computing and IoT Specialization",
+    desc:"The Ambient Computing and IoT Specialization focuses on building Smart Homes, Offices, Factories, and Cities using Voice computing, Matter Protocol, and Embedded Devices.",
+    my_img:i1,
+    quarters:[
+        {
+            header:"Quarter IV",
+            desc:"AC-351: Ambient Computing with Voice Assistants and Matter Devices",
+            number:4
+        },
+        {
+            header:"Quarter V",
+            desc:"AC-361: Embedded Programming using C and Rust",
+            number:5
         }
+    ]
+    }
+
+    
    
-
-
-]
-const SpecializedTracks = () => (
+    ]
+const SpecializedTracks = () => {
+    const [selectedItem,setSelectedItem]=useState("wmd")
+    // console.log(selectedItem)
+    const selectedItemData=programdata.find((item)=>item.slug===selectedItem)
+    // console.log(selectedItemData)
+return(
     <section>
         <Wrapper>
             {/* Header */}
             <div>
-                <h2 className='text-4xl font-bold text-slate-600 whitespace-pre-line '>Specialized Tracks</h2>
+                <h2 className='text-4xl font-bold  whitespace-pre-line '>Specialized Tracks</h2>
                 <p className='mt-6 text-xl text-slate-600 max-w-screen-sm'>After Completing the first three quarters participants will select one or more specializations consisting of two courses each</p>
             </div>
        
-            <div className=" mt-10 flex gap-x-6 gap-y-8 ">
+            <div className=" mt-10 flex  flex-col-reverse lg:flex-row gap-x-6 gap-y-8 ">
                 {/* Content left */}
-                <div className="shadow-xl basis-8/12 rounded-xl border border-slate-400 py-8 px-8">
-                    <h4 className='text-primary text-lg font-medium'>Specialized Track</h4>
-                    <h3 className="text-2xl font-bold">Web 3.0 (Blockchain) and Metaverse Specialization</h3>
-                    <p className="text-lg text-slate-600 mt-2">This Web 3.0 and Metaverse specialization focuses on developing full-stack Web 3.0 and Metaverse experiences for the next generation of the internet by specializing in building worlds that merge the best of cutting-edge decentralized distributed blockchains with 3D metaverse client experiences.</p>
+                <div className="shadow-xl sticky top-24 self-start basis-8/12 rounded-xl border border-slate-400 py-8 px-8">
+                    <h4 className='text-primary text-lg font-bold'>Specialized Track</h4>
+                    <h3 className="text-2xl font-bold">{selectedItemData?.header}</h3>
+                    <p className="text-lg text-slate-600 mt-2">{selectedItemData?.desc}</p>
                     <button className="text-primary text-xl mt-4 underline">{`Learn More >`}</button>
-                    <div className="flex mt-8 gap-4">
-                    <QuarterBox header="Quarter IV" desc="W3-351: Developing Smart Contracts and Planet-Scale Web 3.0 Dapps" number={4} />
-                    <QuarterBox header="Quarter V" desc="MV-361: Developing Planet-Scale Open Virtual and Augmented Metaverse Experiences 5" number={5} />
+                    <div className="flex  mt-8 gap-4">
+                        {
+                            selectedItemData?.quarters.map((item,i)=>(
+                                <QuarterBox key={i} header={item.header} desc={item.desc} number={item.number} />
+                            ))
+                        }
+                    
+                    
                 </div>
                 </div>
                  {/* content right */}
                 <div className="px-4 py-6 gap-x-4 items-center basis-4/12 space-y-4 flex-1">
                     {
                         programdata.map((item,i)=>(
-                <div key={item.slug} className="flex gap-x-4 items-center cursor-pointer">
+                <div onClick={()=> setSelectedItem(item.slug)} key={item.slug} className="flex gap-x-4 items-center cursor-pointer">
                   <div className="flex-shrink-0 ">
                     {/* <div className="w-21 h-12 rounded bg-red-300"> */}
                     <Image src={item.my_img} alt="image " className={"h-24 w-36 object-cover rounded-md"}></Image>
@@ -100,11 +145,11 @@ const SpecializedTracks = () => (
 
              </div>
       
-        
+     
            
              
         </Wrapper>
     </section>
 )
-
+ }
 export default SpecializedTracks

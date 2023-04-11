@@ -1,19 +1,20 @@
-import Logo from'public/logo.png'
+import Logo from'public/panaverse_logo.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import Wrapper from '../shared/Wrapper'
 const Header = () => {
   return (
+    <header className='sticky top-0 z-10 bg-white'>
     <Wrapper>
-    <header className="flex justify-between  mx-auto py-4 bg-white sticky top-0 items-center">
+    <div className="flex justify-between  mx-auto py-0 bg-white  ">
         <div>
         {/* <h2 className="text-xl font-bold">Panaverse Dao</h2> */}
-        <Image src={Logo} alt="Panaverse Dao logo"/>
+        <Image src={Logo} alt="Panaverse Dao logo" className={"rounded"}/>
      
         </div>
         
 
-        <ul className="flex space-x-8 font-semibold">
+        <ul className="flex space-x-8 font-semibold my-10">
             <li>
                 <Link href={'/'}>
                     Home
@@ -25,8 +26,9 @@ const Header = () => {
             </Link>
             </li>
         </ul>
-    </header>
+    </div>
     </Wrapper>
+  </header>
   )
 }
 
